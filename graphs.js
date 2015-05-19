@@ -8,7 +8,7 @@ var showCommittees = function (el, d) {
 
 function dashboard(id, fData){
     
-    var barColor = 'steelblue';
+    var barColor = '#3790DC';
     function segColor(c) { return { low:"#807dba", mid:"#e08214", high:"#41ab5d" }[c]; }
     
     // compute total for each state.
@@ -64,7 +64,7 @@ function dashboard(id, fData){
         function mouseover(d){  // utility function to be called on mouseover.
             // filter for selected state.
             var data = (d3.entries(fData)).filter(function(s){return s.key == d[0];})[0];
-            showCommittees("#committees", data.value["committees"])
+            showCommittees("#committees ul", data.value["committees"])
         }
         
         function mouseout(d){    // utility function to be called on mouseout.
